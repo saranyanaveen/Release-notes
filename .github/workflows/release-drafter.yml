@@ -99,7 +99,9 @@ jobs:
           VERSION="v${NEXT_MAJOR}.${NEXT_MINOR}.${NEXT_PATCH}"
           echo "RESOLVED_VERSION=$VERSION" >> $GITHUB_ENV
           echo "Release Version: $VERSION"
-
+      - name: Debug RESOLVED_VERSION
+        run: echo "RESOLVED_VERSION=$RESOLVED_VERSION"
+        
       - name: Release Drafter
         uses: release-drafter/release-drafter@v6.0.0
         with:
