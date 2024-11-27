@@ -101,7 +101,7 @@ jobs:
       # Step 8: Substitute dynamic version in Release Drafter
       - name: Substitute version in release-drafter.yml
         run: |
-          sed -i "s/\${{ env.RESOLVED_VERSION }}/${{ env.RESOLVED_VERSION }}/g" .github/release-drafter.yml
+          sed -i "s/\${RESOLVED_VERSION}/$RESOLVED_VERSION/g" .github/release-drafter.yml
           echo "Updated release-drafter.yml with version: $RESOLVED_VERSION"
 
       # Step 9: Run Release Drafter
@@ -111,4 +111,3 @@ jobs:
           config-name: release-drafter.yml
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          RESOLVED_VERSION: ${{ env.RESOLVED_VERSION }}
