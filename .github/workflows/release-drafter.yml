@@ -114,4 +114,3 @@ jobs:
           RESOLVED_VERSION: ${{ env.RESOLVED_VERSION }}
       - name: Debug updated release-drafter.yml
         run: cat .github/release-drafter.yml
-
