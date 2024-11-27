@@ -94,18 +94,15 @@ jobs:
           echo "New version: v$NEXT_MAJOR.$NEXT_MINOR.$NEXT_PATCH"
       - name: Set version for Release Drafter
         run: |
-            # Construct the version manually, using the incremented values
-            VERSION="v${NEXT_MAJOR}.${NEXT_MINOR}.${NEXT_PATCH}"
-            echo "RESOLVED_VERSION=$VERSION" >> $GITHUB_ENV
-            echo "Release Version: $VERSION"
-  
+          # Construct the version manually, using the incremented values
+          VERSION="v${NEXT_MAJOR}.${NEXT_MINOR}.${NEXT_PATCH}"
+          echo "RESOLVED_VERSION=$VERSION" >> $GITHUB_ENV
+          echo "Release Version: $VERSION"
       - name: Release Drafter
         uses: release-drafter/release-drafter@v6.0.0
         with:
-            config-name: release-drafter.yml
+          config-name: release-drafter.yml
         env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            RESOLVED_VERSION: ${{ env.RESOLVED_VERSION }}          
-          
-     
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RESOLVED_VERSION: ${{ env.RESOLVED_VERSION }}   
       
