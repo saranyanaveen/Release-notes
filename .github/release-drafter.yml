@@ -1,5 +1,5 @@
-name-template: 'Release ${{ env.RESOLVED_VERSION }}'
-tag-template: 'v${{ env.RESOLVED_VERSION }}'
+name-template: "Release ${{ env.RESOLVED_VERSION }}"
+tag-template: "v${{ env.RESOLVED_VERSION }}"
 categories:
   - title: 🚀 Features
     labels:
