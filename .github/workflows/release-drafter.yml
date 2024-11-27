@@ -106,6 +106,6 @@ jobs:
         with:
           config-name: release-drafter.yml
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           RESOLVED_VERSION: ${{ env.RESOLVED_VERSION }}   
       
