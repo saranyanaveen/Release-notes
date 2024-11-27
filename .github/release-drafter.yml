@@ -1,5 +1,5 @@
-name-template: 'Release v${{ NEXT_MAJOR }}.${{ NEXT_MINOR }}.${{ NEXT_PATCH }}'
-tag-template: 'v${{ NEXT_MAJOR }}.${{ NEXT_MINOR }}.${{ NEXT_PATCH }}'
+name-template: 'Release ${{ env.RESOLVED_VERSION }}'
+tag-template: 'v${{ env.RESOLVED_VERSION }}'
 categories:
   - title: 🚀 Features
     labels:
