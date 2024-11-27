@@ -93,7 +93,11 @@ jobs:
           echo "NEXT_PATCH=$NEXT_PATCH" >> $GITHUB_ENV
           echo "New version: v$NEXT_MAJOR.$NEXT_MINOR.$NEXT_PATCH"
 
-
+          
+          
+      - name: Debug Resolved Version
+        run: |
+          echo "Resolved Version: v${{ env.NEXT_MAJOR }}.${{ env.NEXT_MINOR }}.${{ env.NEXT_PATCH }}"
       - name: Release Drafter
         uses: release-drafter/release-drafter@v6.0.0
         with:
@@ -103,3 +107,4 @@ jobs:
           NEXT_MAJOR: ${{ env.NEXT_MAJOR }}
           NEXT_MINOR: ${{ env.NEXT_MINOR }}
           NEXT_PATCH: ${{ env.NEXT_PATCH }}
+          RESOLVED_VERSION: v${{ env.NEXT_MAJOR }}.${{ env.NEXT_MINOR }}.${{ env.NEXT_PATCH }}
