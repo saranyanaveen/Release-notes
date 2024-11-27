@@ -61,7 +61,7 @@ jobs:
 
 
           # Check commit messages for keywords
-          if git log -1 --pretty=%B | grep -iq "BREAKING CHANGE"; then
+          if git log -1 --pretty=%B | grep -iqE "BREAKING CHANGE"; then
             BUMP_TYPE="major"
           fi
 
@@ -97,7 +97,7 @@ jobs:
       - name: Release Drafter
         uses: release-drafter/release-drafter@v6.0.0
         with:
-          config-name: .github/release-drafter.yml
+          config-name: .github\release-drafter.yml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NEXT_MAJOR: ${{ env.NEXT_MAJOR }}
