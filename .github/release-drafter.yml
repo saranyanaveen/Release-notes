@@ -35,6 +35,8 @@ version-resolver:
     labels:
       - minor
       - feature
+      - feat
+      - enhancement
   patch:
     labels:
       - patch
@@ -43,3 +45,11 @@ version-resolver:
       - chore
       - maintenance
   default: patch
+template: |
+  ## 🚀 Release Notes
+
+  ## What's Changed
+  $CHANGES
+
+  ## Contributors
+  $CONTRIBUTORS
